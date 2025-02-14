@@ -1,4 +1,0 @@
-#!/bin/bash -e
-
-# validate file contains /terraform_basics/main.tf "address = \"http://localhost:8200\""
-true

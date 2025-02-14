@@ -1,7 +1,16 @@
 resource "terminal" "shell" {
+  title = "Terminal"
+
+  target = resource.container.ubuntu
+  
+  shell = "/bin/bash"
+  working_directory = "/root"
+}
+
+resource "terminal" "shell2" {
   title = "Vault terminal"
 
-  target = resource.container.vault
+  target = resource.container.ubuntu
   shell = "/bin/sh"
   user = "root"
   group = "root"
@@ -14,7 +23,7 @@ resource "terminal" "shell" {
 resource "service" "vault_ui" {
   title = "Vault UI"
 
-  target = resource.container.vault
+  target = resource.container.ubuntu
   scheme = "http"
   port = 8200
   path = "/ui"
@@ -36,76 +45,13 @@ resource "editor" "code" {
   }
 
   workspace "vault_config" {
-    target = resource.container.vault
+    target = resource.container.ubuntu
     directory = "/etc/vault.d"
   }
 }
 
 resource "note" "addendum" {
   title = "Addendum"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note2" {
-  title = "Note 2"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note3" {
-  title = "Note 3"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note4" {
-  title = "Note 4"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note5" {
-  title = "Note 5"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note6" {
-  title = "Note 6"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note7" {
-  title = "Note 7"
-  
-  file = "notes/addendum.md"
-  variables = {
-    version = "0.12"
-  }
-}
-
-resource "note" "note8" {
-  title = "Note 8"
   
   file = "notes/addendum.md"
   variables = {

@@ -1,5 +1,0 @@
-#!/bin/bash -e
-
-# Is the 'terraform -help' command used?
-# validate history contains --match-line "terraform -help"
-true

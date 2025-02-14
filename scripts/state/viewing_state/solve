@@ -1,3 +1,0 @@
-#!/bin/bash -e
-terraform -chdir=/terraform_basics show
-terraform -chdir=/terraform_basics show -json
